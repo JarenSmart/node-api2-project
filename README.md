@@ -85,7 +85,7 @@ Configure the API to handle to the following routes:
 
 #### Endpoint Specifications
 
-When the client makes a `POST` request to `/api/posts`:
+When the client makes a `POST` request to `/api/posts`: FINISHED [x]
 
 - If the request body is missing the `title` or `contents` property:
 
@@ -128,7 +128,7 @@ When the client makes a `POST` request to `/api/posts/:id/comments`:
   - respond with HTTP status code `500` (Server Error).
   - return the following JSON object: `{ error: "There was an error while saving the comment to the database" }`.
 
-When the client makes a `GET` request to `/api/posts`:
+When the client makes a `GET` request to `/api/posts`: FINISHED [x]
 
 - If there's an error in retrieving the _posts_ from the database:
   - cancel the request.
@@ -147,14 +147,14 @@ When the client makes a `GET` request to `/api/posts/:id`:
   - respond with HTTP status code `500`.
   - return the following JSON object: `{ error: "The post information could not be retrieved." }`.
 
-When the client makes a `GET` request to `/api/posts/:id/comments`:
+When the client makes a `GET` request to `/api/posts/:id/comments`: FINISHED [x]
 
-- If the _post_ with the specified `id` is not found:
+- If the _post_ with the specified `id` is not found: FINISHED [x]
 
   - return HTTP status code `404` (Not Found).
   - return the following JSON object: `{ message: "The post with the specified ID does not exist." }`.
 
-- If there's an error in retrieving the _comments_ from the database:
+- If there's an error in retrieving the _comments_ from the database: FINISHED [x]
   - cancel the request.
   - respond with HTTP status code `500`.
   - return the following JSON object: `{ error: "The comments information could not be retrieved." }`.

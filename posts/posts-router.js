@@ -25,11 +25,44 @@ router.post("/api/posts", (req, res) => {
 
 router.post("/api/posts/:id/comments", (req, res) => {});
 
-router.get("/api/posts", (req, res) => {});
+router.get("/api/posts", (req, res) => {
+  posts
+    .find()
+    .then((posts) => {
+      res.json(posts);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).json({
+        error: "The posts information could not be retrieved.",
+      });
+    });
+});
 
 router.get("/api/posts/:id", (req, res) => {});
 
-router.get("/api/posts/:id/comments", (req, res) => {});
+router.get("/api/posts/:id/comments", (req, res) => {
+  posts
+    .findById(req.params.id)
+    .then((post) => {
+      if (!post) {
+        return res.status(404).json({
+          message: "The post with the specified ID does not exist.",
+        });
+      }
+
+      return posts.findPostComments(req.params.id);
+    })
+    .then((posts) => {
+      res.json(posts);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).json({
+        error: "The comments information could not be retrieved.",
+      });
+    });
+});
 
 router.delete("/api/posts/:id", (req, res) => {});
 
