@@ -135,14 +135,14 @@ When the client makes a `GET` request to `/api/posts`: FINISHED [x]
   - respond with HTTP status code `500`.
   - return the following JSON object: `{ error: "The posts information could not be retrieved." }`.
 
-When the client makes a `GET` request to `/api/posts/:id`:
+When the client makes a `GET` request to `/api/posts/:id`: FINISHED [x]
 
-- If the _post_ with the specified `id` is not found:
+- If the _post_ with the specified `id` is not found: FINISHED [x]
 
   - return HTTP status code `404` (Not Found).
   - return the following JSON object: `{ message: "The post with the specified ID does not exist." }`.
 
-- If there's an error in retrieving the _post_ from the database:
+- If there's an error in retrieving the _post_ from the database: FINISHED [x]
   - cancel the request.
   - respond with HTTP status code `500`.
   - return the following JSON object: `{ error: "The post information could not be retrieved." }`.
@@ -159,14 +159,14 @@ When the client makes a `GET` request to `/api/posts/:id/comments`: FINISHED [x]
   - respond with HTTP status code `500`.
   - return the following JSON object: `{ error: "The comments information could not be retrieved." }`.
 
-When the client makes a `DELETE` request to `/api/posts/:id`:
+When the client makes a `DELETE` request to `/api/posts/:id`: FINISHED [x]
 
-- If the _post_ with the specified `id` is not found:
+- If the _post_ with the specified `id` is not found: FINISHED [x]
 
   - return HTTP status code `404` (Not Found).
   - return the following JSON object: `{ message: "The post with the specified ID does not exist." }`.
 
-- If there's an error in removing the _post_ from the database:
+- If there's an error in removing the _post_ from the database: FINISHED [x]
   - cancel the request.
   - respond with HTTP status code `500`.
   - return the following JSON object: `{ error: "The post could not be removed" }`.
